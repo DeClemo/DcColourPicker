@@ -1,0 +1,13 @@
+parameters:
+    danielclements.colourpickerbundle.fieldType.dccolourpicker.class: DanielClements\ColourPickerBundle\FieldType\ColourPicker\Type
+ 
+services:
+    danielclements.colourpickerbundle.fieldType.dccolourpicker:
+        parent: ezpublish.fieldType
+        class: %danielclements.colourpickerbundle.fieldType.dccolourpicker.class%
+        tags:
+            - {name: ezpublish.fieldType, alias: dccolourpicker}
+    danielclements.colourpickerbundle.fieldType.dccolourpicker.converter:
+        class: DanielClements\ColourPickerBundle\FieldType\ColourPicker\LegacyConverter
+        tags:
+            - {name: ezpublish.storageEngine.legacy.converter, alias: dccolourpicker}

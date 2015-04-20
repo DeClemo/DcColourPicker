@@ -1,0 +1,10 @@
+{% extends "EzPublishCoreBundle::content_fields.html.twig" %}
+
+{% block sfcolourpicker_field %}
+{% spaceless %}
+    {% set field_value %}
+        {{ field.value.contents }}
+    {% endset %}
+    {{ block( 'simple_inline_field' ) }}
+{% endspaceless %}
+{% endblock %}

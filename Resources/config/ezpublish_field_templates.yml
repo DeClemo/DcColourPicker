@@ -1,0 +1,4 @@
+system:
+    default:
+        field_templates:
+            - {template: "DcColourPickBundle:fields:dccolourpicker.html.twig"}
