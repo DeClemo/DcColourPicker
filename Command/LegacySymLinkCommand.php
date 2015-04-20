@@ -20,7 +20,7 @@ class LegacySymLinkCommand extends \Symfony\Bundle\FrameworkBundle\Command\Conta
      */
     protected function configure()
     {
-        $this->setName( 'sfdigital:colourpicker:legacysymlink' );
+        $this->setName( 'danielclements:colourpicker:legacysymlink' );
         //$this->setDefinition();
     }
  

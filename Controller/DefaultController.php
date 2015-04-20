@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction($name)
     {
-        return $this->render('DCColourPickBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('DcColourPickBundle:Default:index.html.twig', array('name' => $name));
     }
 }

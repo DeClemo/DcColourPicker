@@ -1,6 +1,6 @@
 {
-    "name": "ezsystems/demobundle",
-    "description": "Demo bundle for eZ Publish Platform",
+    "name": "danielclements/colourpickerbundle",
+    "description": "Colour picker field type for eZ Publish 5.",
     "license": "GPL-2.0",
     "authors": [
         {
