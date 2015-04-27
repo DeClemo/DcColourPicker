@@ -7,7 +7,7 @@
  * @version
  */
 
-namespace SFDigital\ColourPickerBundle\FieldType\ColourPicker;
+namespace DanielClements\ColourPickerBundle\FieldType\ColourPicker;
 
 use eZ\Publish\Core\FieldType\Value as BaseValue;
 
@@ -30,7 +30,10 @@ class Value extends BaseValue
      */
     public function __construct( $hexValue = '' )
     {
-        $this->hexValue = $hexValue;
+        parent::__construct( array(
+            'hexValue' => $hexValue
+        ) );
+        //$this->hexValue = $hexValue;
     }
 
     /**

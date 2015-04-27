@@ -20,12 +20,12 @@ class LegacyConverter implements Converter
 {
     public function toStorageValue( FieldValue $value, StorageFieldValue $storageFieldValue )
     {
-        $storageFieldValue->dataText = $value->hexValue;
+        $storageFieldValue->dataText = $value->data;
         $storageFieldValue->sortKeyInt = $value->sortKey;
     }
     public function toFieldValue( StorageFieldValue $value, FieldValue $fieldValue )
     {
-        $fieldValue->hexValue = $value->dataText;
+        $fieldValue->data = $value->dataText;
         $fieldValue->sortKey = $value->sortKeyInt;
     }
 

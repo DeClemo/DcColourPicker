@@ -7,7 +7,7 @@
 
 <input 
     id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}"
-    name="{$attribute_base}_sfcolourpicker_data_text_{$attribute.id}" value="{$attribute.data_text|wash( xhtml )}"
+    name="{$attribute_base}_dccolourpicker_data_text_{$attribute.id}" value="{$attribute.data_text|wash( xhtml )}"
     class="{eq( $html_class, 'half' )|choose( 'box', 'halfbox' )} ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier} colourPicker" 
     type="text" 
     size="70"

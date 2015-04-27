@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>DC Colour Picker Bundle</name>
+        <version>//autogentag//</version>
+        <copyright>Copyright (C) 2015 Daniel Clements</copyright>
+        <license>MIT License (MIT)</license>
+        <info_url>https://github.com/DeClemo/DcColourPicker.git</info_url>
+    </metadata>
+
+    <dependencies>
+        <requires>
+            <extension name="ngsymfonytools" />
+        </requires>
+    </dependencies>
+</software>

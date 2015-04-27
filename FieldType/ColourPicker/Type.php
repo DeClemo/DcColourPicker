@@ -15,6 +15,7 @@ use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
 use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
 use eZ\Publish\SPI\FieldType\Value as SPIValue;
 use eZ\Publish\Core\FieldType\Value as BaseValue;
+use eZ\Publish\SPI\Persistence\Content\FieldValue as PersistenceValue;
 
 /**
  * The DcColourPicker field type.
