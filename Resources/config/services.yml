@@ -1,5 +1,6 @@
 parameters:
     danielclements.colourpickerbundle.fieldType.dccolourpicker.class: DanielClements\ColourPickerBundle\FieldType\ColourPicker\Type
+    danielclements.colourpickerbundle.fieldType.dccolourpicker.converter.class: DanielClements\ColourPickerBundle\FieldType\ColourPicker\LegacyConverter
  
 services:
     danielclements.colourpickerbundle.fieldType.dccolourpicker:
@@ -8,6 +9,6 @@ services:
         tags:
             - {name: ezpublish.fieldType, alias: dccolourpicker}
     danielclements.colourpickerbundle.fieldType.dccolourpicker.converter:
-        class: DanielClements\ColourPickerBundle\FieldType\ColourPicker\LegacyConverter
+        class: %danielclements.colourpickerbundle.fieldType.dccolourpicker.converter.class%
         tags:
-            - {name: ezpublish.storageEngine.legacy.converter, alias: dccolourpicker}
+            - {name: ezpublish.storageEngine.legacy.converter, alias: dccolourpicker, lazy: true, callback: '::create'}

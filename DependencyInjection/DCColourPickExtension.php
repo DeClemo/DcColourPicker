@@ -3,10 +3,11 @@
 namespace DanielClements\ColourPickerBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
-use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -16,6 +17,16 @@ use Symfony\Component\Yaml\Yaml;
  */
 class DcColourPickExtension extends Extension implements PrependExtensionInterface
 {
+    protected function getFilesToPrepend()
+    {
+        return array(
+            array(
+                'config_file' => 'ezpublish_field_templates.yml',
+                'name' => 'ezpublish'
+            ),
+        );
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -27,10 +38,22 @@ class DcColourPickExtension extends Extension implements PrependExtensionInterfa
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
-    
-    public function prepend( ContainerBuilder $container )
+
+    /**
+     * Allow an extension to prepend the extension configurations.
+     *
+     * @param ContainerBuilder $container
+     */
+    public function prepend(ContainerBuilder $container)
     {
-        $config = Yaml::parse( __DIR__ . '/../Resources/config/ezpublish_field_templates.yml' );
-        $container->prependExtensionConfig( 'ezpublish', $config );
+        $configSettings = $this->getFilesToPrepend();
+
+        foreach ($configSettings as $file)
+        {
+            $configFile = __DIR__ . '/../Resources/config/'.$file['config_file'];
+            $config = Yaml::parse( file_get_contents( $configFile ) );
+            $container->prependExtensionConfig( $file['name'], $config );
+            $container->addResource( new FileResource( $configFile ) );
+        }
     }
 }

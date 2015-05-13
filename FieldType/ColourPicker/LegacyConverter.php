@@ -18,6 +18,18 @@ use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldDefinition;
 
 class LegacyConverter implements ConverterInterface
 {
+    /**
+     * Factory for current class
+     *
+     * @note Class should instead be configured as service if it gains dependencies.
+     *
+     * @return TextLine
+     */
+    public static function create()
+    {
+        return new self;
+    }
+
     public function toStorageValue( FieldValue $value, StorageFieldValue $storageFieldValue )
     {
         $storageFieldValue->dataText = $value->data;
