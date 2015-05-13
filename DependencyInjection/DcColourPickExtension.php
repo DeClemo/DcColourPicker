@@ -38,7 +38,6 @@ class DcColourPickExtension extends Extension implements PrependExtensionInterfa
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        print_r('THIS IS A TEST');
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
