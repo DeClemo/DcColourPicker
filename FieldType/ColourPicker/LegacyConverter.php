@@ -9,14 +9,14 @@
 
 namespace DanielClements\ColourPickerBundle\FieldType\ColourPicker;
  
-use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter;
+use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter as ConverterInterface;
 use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldValue;
 //use eZ\Publish\Core\Persistence\Legacy\Content\FieldDefinition;
 use eZ\Publish\SPI\Persistence\Content\FieldValue;
 use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldDefinition;
 
-class LegacyConverter implements Converter
+class LegacyConverter implements ConverterInterface
 {
     public function toStorageValue( FieldValue $value, StorageFieldValue $storageFieldValue )
     {
