@@ -1,4 +1,10 @@
 <?php
+/**
+ * 
+ * Author: Daniel Clements
+ * Date: 13/05/15
+ * Time: 11:45 AM
+ */
 
 namespace DanielClements\ColourPickerBundle\DependencyInjection;
 
@@ -32,6 +38,7 @@ class DcColourPickExtension extends Extension implements PrependExtensionInterfa
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        print_r('THIS IS A TEST');
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
